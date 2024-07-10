@@ -1,0 +1,60 @@
+.app-container {
+  background-image: url("../src/assets/background.svg");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header-container {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.header-container h1 {
+  font-size: 30px;
+}
+
+.links-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  width: 500px;
+  height: 400px;
+}
+
+.item-container {
+  width: 200px;
+  height: 200px;
+  max-width: 200px;
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.item-container img{
+  width: 200px;
+}
+
+.item-container p{
+  width: 200px;
+  text-align: center;
+  color: white;
+  font-family: "Kode Mono", monospace;
+}
