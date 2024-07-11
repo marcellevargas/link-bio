@@ -1,9 +1,12 @@
 import "./App.css";
 import armazenamento from "./assets/armazenamento.png";
 import sanityClient from "./services/sanity/client";
-import { useEffect } from "react";
+import AppContainer from "./components/AppContainer"
+import { useEffect, useState } from "react";
 
 function App() {
+  const [backgroundImage, setBackgroundImage] = useState("");
+
   useEffect(() => {
     sanityClient
       .fetch(
@@ -21,14 +24,15 @@ function App() {
     }
   }`
       )
-      .then(backgrounds => {
-        console.log(backgrounds[0]);
+      .then(data => {
+        console.log(data[0].backgroundImage.asset.url);
+        setBackgroundImage(data[0].backgroundImage.asset.url)
       })
       .catch(console.error);
   });
 
   return (
-    <div className="app-container">
+    <AppContainer backgroundImage={backgroundImage}>
       <div className="header-container">
         <h1>Portal Tech S.A.</h1>
         <p>Escolha uma categoria</p>
@@ -39,7 +43,7 @@ function App() {
           <p>item-container</p>
         </div>
       </div>
-    </div>
+    </AppContainer>
   );
 }
 
